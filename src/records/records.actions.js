@@ -1,11 +1,11 @@
 import recordsAPI from './recordsAPI';
-import { GET_RECORDS } from './records.constants';
+const newLocal = 'GET_RECORDS';
+const GET_RECORDS = newLocal;
+
 
 export function getRecords() {
-  return function (dispatch) {
-    return recordsAPI.getRecords()
-      .then(results => {
-        dispatch({ type: GET_RECORDS, payload: results });
-      });
+  return async function (dispatch) {
+    const results = await recordsAPI.getRecords();
+    dispatch({ type: GET_RECORDS, payload: results });
   };
 }

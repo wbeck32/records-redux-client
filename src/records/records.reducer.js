@@ -1,4 +1,4 @@
-import { GET_RECORDS } from './records.constants';
+const GET_RECORDS = 'GET_RECORDS';
 
 export default function recordsReducer(state = [], { type, payload }) {
 
